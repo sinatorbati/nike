@@ -62,11 +62,17 @@ class _ShopPageState extends State<ShopPage> {
         const SizedBox(
           height: 10,
         ),
-        Expanded(child: ListView.builder(
-          itemBuilder: (context, index) {
-            return const ShoeTile();
-          },
-        )),
+
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return const ShoeTile();
+            },
+          ),
+        ),
       ],
     );
   }

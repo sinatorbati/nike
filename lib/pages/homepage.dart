@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../components/bottom_nav_bar.dart';
 import 'cart_page.dart';
 import 'shop_page.dart';
@@ -24,10 +23,10 @@ class _HomePageState extends State<HomePage> {
 
   //صفحه برای نشان دادن
   final List<Widget> _pages = [
-    //shop page
-    const ShopPage(),
     //cart page
     const CartPage(),
+    //shop page
+    const ShopPage(),
   ];
 
   @override
