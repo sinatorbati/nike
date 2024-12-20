@@ -9,7 +9,7 @@ class ShoeTile extends StatelessWidget {
       margin: const EdgeInsets.all(20),
       width: 200,
       height: 200,
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(12),
