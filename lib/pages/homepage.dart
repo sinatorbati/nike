@@ -23,10 +23,10 @@ class _HomePageState extends State<HomePage> {
 
   //صفحه برای نشان دادن
   final List<Widget> _pages = [
-    //cart page
-    const CartPage(),
     //shop page
     const ShopPage(),
+    //cart page
+    const CartPage(),
   ];
 
   @override
