@@ -66,25 +66,23 @@ class _ShopPageState extends State<ShopPage> {
           ),
 
           SizedBox(
-            height: 300,
-            child: Expanded(
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 6,
-                itemBuilder: (context, index) {
-                  //create a shoe
-                  Shoe shoe = Shoe(
-                      name: 'jordan',
-                      price: '250',
-                      imagePath: 'lib/assets/images/nike3.png',
-                      description: 'this is a shoe');
-                  return ShoeTile(
-                    shoe: shoe,
-                  );
-                },
-              ),
+            height: 350,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                //create a shoe
+                Shoe shoe = Shoe(
+                    name: 'jordan',
+                    price: '250',
+                    imagePath: 'lib/assets/images/nike3.png',
+                    description: 'this is a shoe');
+                return ShoeTile(
+                  shoe: shoe,
+                );
+              },
             ),
           ),
         ],

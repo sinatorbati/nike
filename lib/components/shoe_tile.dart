@@ -19,10 +19,29 @@ class ShoeTile extends StatelessWidget {
       child: Column(
         children: [
           // Image
-          Image.asset(shoe.imagePath),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              shoe.imagePath,
+            ),
+          ),
 
           //description
-          //price and name
+          Text(
+            shoe.description,
+            style: TextStyle(color: Colors.grey[600]),
+          ),
+          //price and ditails
+          Row(
+            children: [
+              Column(
+                children: [Text(shoe.name), Text(shoe.price)],
+              ),
+              Icon(Icons.add),
+            ],
+          )
+          //price
+          //name
           //button
         ],
       ),
