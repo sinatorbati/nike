@@ -66,7 +66,7 @@ class _ShopPageState extends State<ShopPage> {
           ),
 
           SizedBox(
-            height: 350,
+            height: 460,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
