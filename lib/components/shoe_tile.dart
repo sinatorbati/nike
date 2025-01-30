@@ -2,11 +2,13 @@ import 'package:flutter/material.dart'; // وارد کردن بسته اصلی F
 import 'package:nike/models/shoe.dart'; // وارد کردن مدل Shoe که ویژگی‌های یک کفش را در خود دارد
 
 class ShoeTile extends StatelessWidget {
-  final Shoe
-      shoe; // یک شیء از مدل Shoe که اطلاعات مربوط به هر کفش را شامل می‌شود
-  const ShoeTile(
+  Shoe shoe; // یک شیء از مدل Shoe که اطلاعات مربوط به هر کفش را شامل می‌شود
+  void Function()?
+      onTap; // یک تابع که وقتی دکمه افزودن به سبد خرید فشرده می‌شود فراخوانی می‌شود
+  ShoeTile(
       {super.key,
-      required this.shoe}); // سازنده کلاس که شیء Shoe را به عنوان ورودی می‌گیرد
+      required this.shoe,
+      required this.onTap}); // سازنده کلاس که شیء Shoe را به عنوان ورودی می‌گیرد
 
   @override
   Widget build(BuildContext context) {
@@ -82,22 +84,26 @@ class ShoeTile extends StatelessWidget {
                 ),
 
                 // دکمه افزودن به سبد خرید
-                Container(
-                    padding: const EdgeInsets.all(20), // پدینگ اطراف دکمه
-                    decoration: const BoxDecoration(
-                      // تنظیم رنگ پس‌زمینه دکمه و گوشه‌های گرد
-                      color: Colors.black,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12), // گرد کردن گوشه بالای چپ
-                        bottomRight:
-                            Radius.circular(12), // گرد کردن گوشه پایین راست
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                      padding: const EdgeInsets.all(20), // پدینگ اطراف دکمه
+                      decoration: const BoxDecoration(
+                        // تنظیم رنگ پس‌زمینه دکمه و گوشه‌های گرد
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                          topLeft:
+                              Radius.circular(12), // گرد کردن گوشه بالای چپ
+                          bottomRight:
+                              Radius.circular(12), // گرد کردن گوشه پایین راست
+                        ),
                       ),
-                    ),
-                    child: const Icon(
-                      // آیکن "+" برای افزودن به سبد خرید
-                      Icons.add,
-                      color: Colors.white, // رنگ سفید برای آیکن
-                    ))
+                      child: const Icon(
+                        // آیکن "+" برای افزودن به سبد خرید
+                        Icons.add,
+                        color: Colors.white, // رنگ سفید برای آیکن
+                      )),
+                )
               ],
             ),
           )

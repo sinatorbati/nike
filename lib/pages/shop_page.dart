@@ -13,6 +13,25 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+  void addShoeToCart(Shoe shoe) {
+    // اضافه کردن کفش به سبد خرید
+    Provider.of<Cart>(context, listen: false).addItemsToCart(shoe);
+    showDialog(
+      context: context,
+      builder: (context) => const AlertDialog(
+        title: Text('successfuly added !'),
+        content: Text('check your cart'),
+        //دکمه اوکی برای بستن پنجره
+        // actions: [
+        //   TextButton(
+        //     onPressed: () => Navigator.of(context).pop(),
+        //     child: const Text('OK'),
+        //   ),
+        // ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // استفاده از SingleChildScrollView برای امکان اسکرول کردن محتویات صفحه
@@ -97,6 +116,8 @@ class _ShopPageState extends State<ShopPage> {
                     Shoe shoe = value.getShoeList()[index]; // توضیح کفش
                     return ShoeTile(
                       shoe: shoe, // ارسال شی Shoe به ShoeTile برای نمایش
+                      onTap: () =>
+                          addShoeToCart(shoe), // اضافه کردن کفش به سبد خرید
                     );
                   },
                 ),
