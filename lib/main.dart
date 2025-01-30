@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart'; // وارد کردن بسته flutter برای استفاده از امکانات آن
-import 'pages/intro_page.dart'; // وارد کردن صفحه معرفی (intro_page.dart) که به عنوان صفحه اول برنامه نمایش داده می‌شود
+import 'pages/intro_page.dart'; // وارد کردن صفحه معرفی (intro_page.da
+import 'package:provider/provider.dart';
+import 'models/cart.dart'; // وارد کردن کلاس Cart از فایل cart.dart
 
 // نقطه شروع برنامه
 void main() {
@@ -14,10 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ساختار ویجت اصلی اپلیکیشن
-    return const MaterialApp(
-      // debugShowCheckedModeBanner: false,  // این خط برای غیرفعال کردن بنر دیباگ در بالای اپلیکیشن هست. اگر می‌خواهید در زمان دیباگ بنر نباشه، می‌توانید این خط رو از کامنت خارج کنید.
-      home:
-          Intropage(), // در اینجا صفحه شروع اپ که Intropage هست به عنوان صفحه اصلی تنظیم می‌شود. (اولین صفحه ای که بعد از اجرای برنامه نمایش داده می‌شود)
+    return ChangeNotifierProvider(
+      create: (context) => Cart(), // ایجاد یک instance از کلاس Cart
+      child: const MaterialApp(
+        debugShowCheckedModeBanner:
+            false, // این خط برای غیرفعال کردن بنر دیباگ در بالای اپلیکیشن هست. اگر می‌خواهید در زمان دیباگ بنر نباشه، می‌توانید این خط رو از کامنت خارج کنید.
+        home:
+            Intropage(), // در اینجا صفحه شروع اپ که Intropage هست به عنوان صفحه اصلی تنظیم می‌شود. (اولین صفحه ای که بعد از اجرای برنامه نمایش داده می‌شود)
+      ),
     );
   }
 }

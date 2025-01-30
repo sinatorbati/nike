@@ -36,9 +36,13 @@ class ShoeTile extends StatelessWidget {
           ),
 
           // بخش توضیحات کفش
-          Text(
-            shoe.description, // نمایش توضیحات کفش
-            style: TextStyle(color: Colors.grey[600]), // رنگ خاکی برای توضیحات
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              shoe.description, // نمایش توضیحات کفش
+              style:
+                  TextStyle(color: Colors.grey[600]), // رنگ خاکی برای توضیحات
+            ),
           ),
 
           // بخش قیمت و نام کفش
