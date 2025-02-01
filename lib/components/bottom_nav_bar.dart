@@ -27,6 +27,7 @@ class MyBottomNavBar extends StatelessWidget {
           mainAxisAlignment:
               MainAxisAlignment.center, // قرار دادن تب‌ها در مرکز نوار
           tabBorderRadius: 16, // گرد کردن گوشه‌های تب‌ها
+          gap: 8, // فاصله بین تب‌ها
           onTabChange: (value) => onTabChange!(
               value), // ارسال اندیس تب فعال به تابع onTabChange که از والد گرفته شده است
           tabs: const [
