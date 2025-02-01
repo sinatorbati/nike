@@ -3,7 +3,6 @@ import 'package:nike/components/cart_item.dart';
 import 'package:nike/models/cart.dart';
 import 'package:nike/models/shoe.dart';
 import 'package:provider/provider.dart';
-import 'package:nike/components/cart_item.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
